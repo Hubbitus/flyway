@@ -21,7 +21,7 @@
     <parent>
         <groupId>org.flywaydb</groupId>
         <artifactId>flyway-parent</artifactId>
-        <version>9.15.2</version>
+        <version>9.16.0</version>
     </parent>
     <artifactId>flyway-commandline</artifactId>
     <packaging>jar</packaging>
@@ -30,11 +30,7 @@
 
 
 
-        <flyway-gcp-bigquery.version>${project.version}</flyway-gcp-bigquery.version>
-        <flyway-gcp-spanner.version>9.15.2-beta</flyway-gcp-spanner.version>
-        <flyway-sqlserver.version>${project.version}</flyway-sqlserver.version>
-        <flyway-mysql.version>${project.version}</flyway-mysql.version>
-        <flyway-firebird.version>${project.version}</flyway-firebird.version>
+        <flyway-gcp-spanner.version>9.16.0-beta</flyway-gcp-spanner.version>
         <jre.version>17.0.5</jre.version>
     </properties>
     <dependencies>
@@ -52,7 +48,7 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>flyway-gcp-bigquery</artifactId>
-            <version>${flyway-gcp-bigquery.version}</version>
+            <version>${project.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -64,19 +60,19 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>flyway-sqlserver</artifactId>
-            <version>${flyway-sqlserver.version}</version>
+            <version>${project.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>flyway-mysql</artifactId>
-            <version>${flyway-mysql.version}</version>
+            <version>${project.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>flyway-firebird</artifactId>
-            <version>${flyway-firebird.version}</version>
+            <version>${project.version}</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -85,6 +81,38 @@
             <version>0.4.1</version>
             <classifier>all</classifier>
         </dependency>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -485,7 +513,9 @@
             <build>
                 <plugins>
                     <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-dependency-plugin</artifactId>
+                        <version>3.5.0</version>
                         <executions>
                             <execution>
                                 <id>unpack-jres</id>
@@ -516,7 +546,9 @@
                         </executions>
                     </plugin>
                     <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
+                        <version>3.5.0</version>
                         <executions>
                             <execution>
                                 <id>nojre-assembly</id>
@@ -627,7 +659,9 @@
                         </executions>
                     </plugin>
                     <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
+                        <version>3.5.0</version>
                         <executions>
                             <execution>
                                 <id>jre-assemblies</id>
@@ -691,7 +725,9 @@
                         </executions>
                     </plugin>
                     <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
+                        <version>3.5.0</version>
                         <executions>
                             <execution>
                                 <id>jre-assemblies</id>
@@ -755,7 +791,9 @@
                         </executions>
                     </plugin>
                     <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
+                        <version>3.5.0</version>
                         <executions>
                             <execution>
                                 <id>jre-assemblies</id>
@@ -819,7 +857,9 @@
                         </executions>
                     </plugin>
                     <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
+                        <version>3.5.0</version>
                         <executions>
                             <execution>
                                 <id>jre-assemblies</id>
@@ -883,7 +923,9 @@
                         </executions>
                     </plugin>
                     <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-assembly-plugin</artifactId>
+                        <version>3.5.0</version>
                         <executions>
                             <execution>
                                 <id>nojre-assembly</id>
@@ -1049,6 +1091,13 @@
                                         <artifactItem>
                                             <groupId>org.flywaydb.enterprise</groupId>
                                             <artifactId>flyway-rulesengine-sqlfluff</artifactId>
+                                            <version>${project.version}</version>
+                                            <type>jar</type>
+                                            <outputDirectory>${project.build.directory}/editions/community</outputDirectory>
+                                        </artifactItem>
+                                        <artifactItem>
+                                            <groupId>org.flywaydb.enterprise</groupId>
+                                            <artifactId>flyway-command-resolve-environment</artifactId>
                                             <version>${project.version}</version>
                                             <type>jar</type>
                                             <outputDirectory>${project.build.directory}/editions/community</outputDirectory>
