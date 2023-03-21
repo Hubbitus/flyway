@@ -21,7 +21,7 @@
     <parent>
         <groupId>org.flywaydb</groupId>
         <artifactId>flyway-parent</artifactId>
-        <version>9.16.0</version>
+        <version>9.16.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -45,11 +45,21 @@
             <version>${version.junit}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
         <!-- JDBC drivers -->
         <dependency>
             <groupId>org.apache.ignite</groupId>
             <artifactId>ignite-core</artifactId>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.clickhouse</groupId>
+            <artifactId>clickhouse-jdbc</artifactId>
+            <version>0.4.1</version>
+            <optional>false</optional>
         </dependency>
     </dependencies>
 

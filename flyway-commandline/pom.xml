@@ -21,7 +21,7 @@
     <parent>
         <groupId>org.flywaydb</groupId>
         <artifactId>flyway-parent</artifactId>
-        <version>9.16.0</version>
+        <version>9.16.1</version>
     </parent>
     <artifactId>flyway-commandline</artifactId>
     <packaging>jar</packaging>
@@ -30,7 +30,7 @@
 
 
 
-        <flyway-gcp-spanner.version>9.16.0-beta</flyway-gcp-spanner.version>
+        <flyway-gcp-spanner.version>9.16.1-beta</flyway-gcp-spanner.version>
         <jre.version>17.0.5</jre.version>
     </properties>
     <dependencies>
@@ -75,7 +75,12 @@
             <version>${project.version}</version>
             <scope>runtime</scope>
         </dependency>
-
+        <dependency>
+            <groupId>com.clickhouse</groupId>
+            <artifactId>clickhouse-jdbc</artifactId>
+            <version>0.4.1</version>
+            <classifier>all</classifier>
+        </dependency>
 
 
 
@@ -203,6 +208,13 @@
         <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.clickhouse</groupId>
+            <artifactId>clickhouse-jdbc</artifactId>
+            <version>0.4.1</version>
+            <classifier>all</classifier>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -881,6 +893,13 @@
                 <dependency>
                     <groupId>com.oracle.database.jdbc</groupId>
                     <artifactId>ojdbc8</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>com.clickhouse</groupId>
+                    <artifactId>clickhouse-jdbc</artifactId>
+                    <version>0.4.1</version>
+                    <classifier>all</classifier>
+                    <optional>false</optional>
                 </dependency>
             </dependencies>
             <build>
